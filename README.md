@@ -21,3 +21,4 @@ stupcima prikazivati te podatke. Pritiskom na zaglavlje, lista se sortira
 prema podacima u pripadajućem stupcu. Npr. pritiskom na zaglavlje
 „Datum rođenja“, podaci će se sortirati prema datumima rođenja, a
 pritiskom na zaglavlje „Prezime“ abecedno prema prezimenima osoba.
+
