@@ -6,9 +6,8 @@ C# project for "Programiranje u C#" course at VSITE
 Create a GUI program that will allow you to add and sort data on
 persons according to different comparison criteria. The program must enable
 adding information about a person: name, surname, gender, date of birth, country and
-place of birth. The main window must have a list (e.g. ListView control) with a header that will in the appropriate
-display that data in columns. By pressing the header, the list is sorted
-according to the data in the corresponding column. Eg. by pressing the header
+place of birth. The main window must have a list (e.g. ListView control) with a header that will show data in  appropriate columns.
+By pressing the header, the list is sorted data in the corresponding column. Eg. by pressing the header
 "Date of birth", the data will be sorted by date of birth, a
 by clicking on the heading "Surname" alphabetically according to the surnames of the persons.
 
