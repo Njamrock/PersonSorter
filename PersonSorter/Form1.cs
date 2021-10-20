@@ -58,7 +58,7 @@ namespace PersonSorter
                 item.SubItems.Add(person.Name);
                 item.SubItems.Add(person.LastName);
                 item.SubItems.Add(person.Gender);
-                item.SubItems.Add(person.Birthdate);
+                item.SubItems.Add(person.Birthdate.ToShortDateString());
                 item.SubItems.Add(person.CountryOfBirth);
                 item.SubItems.Add(person.PlaceOfBirth);
                 this.listView1.Items.Add(item);
@@ -135,6 +135,20 @@ namespace PersonSorter
             }
         }
 
+        private void SortReverseChronologically()
+        {
+
+        }
+
+        private void SortChronologically()
+        {
+            foreach (var person in this.personList)
+            {
+                var date = "1";
+                this.DisplayMessage(date, Color.Red);
+            }
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             this.flagButton3 *= -1;
@@ -173,6 +187,17 @@ namespace PersonSorter
         {
             this.flagButton5 *= -1;
             this.button5.BackgroundImage = this.flagButton5 == -1 ? Properties.Resources.down_smaller : Properties.Resources.up_smaller;
+
+            if (this.flagButton5 == 1)
+            {
+                this.SortReverseChronologically();
+                this.DisplayPersons();
+            }
+            else
+            {
+                this.SortChronologically();
+                this.DisplayPersons();
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)

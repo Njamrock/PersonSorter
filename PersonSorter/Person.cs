@@ -1,11 +1,13 @@
-﻿namespace PersonSorter
+﻿using System;
+
+namespace PersonSorter
 {
     public class Person
     {
         public string Name { get; set; }
         public string LastName { get; set; }
         public string Gender { get; set; }
-        public string Birthdate { get; set; }
+        public DateTime Birthdate { get; set; }
         public string CountryOfBirth { get; set; }
         public string PlaceOfBirth { get; set; }
 
@@ -14,9 +16,15 @@
             this.Name = name;
             this.LastName = lastName;
             this.Gender = gender;
-            this.Birthdate = birthdate;
+            this.Birthdate = this.BirthdateParser(birthdate);
             this.CountryOfBirth = countryOfBirth;
             this.PlaceOfBirth = placeOfBirth;
+        }
+
+        private DateTime BirthdateParser(string birthdate)
+        {
+            var arrayOfBirthdateStrings = birthdate.Split('.');
+            return new DateTime(Convert.ToInt32(arrayOfBirthdateStrings[2]), Convert.ToInt32(arrayOfBirthdateStrings[1]), Convert.ToInt32(arrayOfBirthdateStrings[0]));
         }
     }
 }
