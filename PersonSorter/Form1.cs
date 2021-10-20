@@ -137,16 +137,13 @@ namespace PersonSorter
 
         private void SortReverseChronologically()
         {
-
+            this.SortChronologically();
+            this.personList.Reverse();
         }
 
         private void SortChronologically()
         {
-            foreach (var person in this.personList)
-            {
-                var date = "1";
-                this.DisplayMessage(date, Color.Red);
-            }
+            this.personList = this.personList.OrderBy(person => person.Birthdate).ToList();
         }
 
         private void button3_Click(object sender, EventArgs e)
