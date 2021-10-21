@@ -30,6 +30,7 @@ namespace PersonSorter
             this.listView1.Columns.Add("Country of Birth", 107, HorizontalAlignment.Left);
             this.listView1.Columns.Add("Place of Birth", 107, HorizontalAlignment.Left);
             this.listView1.HeaderStyle = ColumnHeaderStyle.None;
+            this.listView1.Click += new System.EventHandler(this.listView1_Click);
 
             this.GenerateAndDisplayFewPersons();
         }
@@ -54,6 +55,7 @@ namespace PersonSorter
             foreach (var person in this.personList)
             {
                 this.registeredPersons++;
+                person.SequenceNumber = this.registeredPersons;
                 var item = new ListViewItem(this.registeredPersons + ".");
                 item.SubItems.Add(person.Name);
                 item.SubItems.Add(person.LastName);
@@ -102,6 +104,12 @@ namespace PersonSorter
                 this.SortAlphabetically("Name");
                 this.DisplayPersons();
             }
+        }
+
+        private void listView1_Click(object sender, EventArgs e)
+        {
+            var firstSelectedItem = listView1.SelectedItems[0];
+            this.DisplayMessage(firstSelectedItem.Name, Color.Blue);
         }
 
         private void SortReverseAlphabetically(string criteria)
@@ -251,6 +259,55 @@ namespace PersonSorter
             else
             {
                 this.DisplayMessage("WARNING: You have to fill out all registration fields.", Color.Chocolate);
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in this.listView1.SelectedItems)
+            {
+                // TODO:02 Resolve Remove button.
+                var number = item.SubItems[0].Text;
+                var name = item.SubItems[1].Text;
+                var lastname = item.SubItems[2].Text;
+                var gender = item.SubItems[3].Text;
+                var date = item.SubItems[4].Text;
+                var country = item.SubItems[5].Text;
+                var place = item.SubItems[6].Text;
+                this.listView1.Items.Remove(item);
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (this.listView1.SelectedItems.Count != 1)
+            {
+                this.DisplayMessage("ERROR: Select exactly one person to edit their data.", Color.Red);
+            }
+            else
+            {
+                Form2 f2 = new Form2(this.listView1.SelectedItems[0]);
+                f2.ShowDialog();
+                var a = this.listView1.SelectedItems[0].SubItems[0].Text;
+                var b = f2.PersonData.SubItems[0].Text;
+                this.listView1.SelectedItems[0].SubItems[1].Text = f2.PersonData.SubItems[1].Text;
+                this.listView1.SelectedItems[0].SubItems[2].Text = f2.PersonData.SubItems[2].Text;
+                this.listView1.SelectedItems[0].SubItems[3].Text = f2.PersonData.SubItems[3].Text;
+                this.listView1.SelectedItems[0].SubItems[4].Text = f2.PersonData.SubItems[4].Text;
+                this.listView1.SelectedItems[0].SubItems[5].Text = f2.PersonData.SubItems[5].Text;
+                this.listView1.SelectedItems[0].SubItems[6].Text = f2.PersonData.SubItems[6].Text;
+
+                foreach (var personData in this.personList.Where(person => person.SequenceNumber == Convert.ToInt32(f2.PersonData.SubItems[0].Text.Split('.')[0])))
+                {
+                    personData.Name = this.listView1.SelectedItems[0].SubItems[1].Text;
+                    personData.LastName = this.listView1.SelectedItems[0].SubItems[2].Text;
+                    personData.Gender = this.listView1.SelectedItems[0].SubItems[3].Text;
+                    personData.Birthdate = new DateTime(Convert.ToInt32(this.listView1.SelectedItems[0].SubItems[4].Text.Split('.')[2]), Convert.ToInt32(this.listView1.SelectedItems[0].SubItems[4].Text.Split('.')[1]), Convert.ToInt32(this.listView1.SelectedItems[0].SubItems[4].Text.Split('.')[0]));
+                    personData.CountryOfBirth = this.listView1.SelectedItems[0].SubItems[5].Text;
+                    personData.PlaceOfBirth = this.listView1.SelectedItems[0].SubItems[6].Text;
+                }
+
+                this.DisplayMessage("LOG: Person's has been updated.", Color.Green);
             }
         }
     }
