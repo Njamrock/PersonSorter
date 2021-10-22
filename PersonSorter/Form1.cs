@@ -22,14 +22,14 @@ namespace PersonSorter
             this.InitializeComponent();
 
             this.listView1.View = View.Details;
+            var oppositeArrows = char.ConvertFromUtf32(8595) + char.ConvertFromUtf32(8593);
             this.listView1.Columns.Add("No.", 36, HorizontalAlignment.Left);
-            this.listView1.Columns.Add("First Name", 86, HorizontalAlignment.Left);
-            this.listView1.Columns.Add("Last Name", 86, HorizontalAlignment.Left);
-            this.listView1.Columns.Add("Gender", 76, HorizontalAlignment.Left);
-            this.listView1.Columns.Add("Birthdate", 76, HorizontalAlignment.Left);
-            this.listView1.Columns.Add("Country of Birth", 107, HorizontalAlignment.Left);
-            this.listView1.Columns.Add("Place of Birth", 107, HorizontalAlignment.Left);
-            this.listView1.HeaderStyle = ColumnHeaderStyle.None;
+            this.listView1.Columns.Add("First Name " + oppositeArrows, 86, HorizontalAlignment.Left);
+            this.listView1.Columns.Add("Last Name " + oppositeArrows, 86, HorizontalAlignment.Left);
+            this.listView1.Columns.Add("Gender " + oppositeArrows, 76, HorizontalAlignment.Left);
+            this.listView1.Columns.Add("Birthdate " + oppositeArrows, 76, HorizontalAlignment.Left);
+            this.listView1.Columns.Add("Country of Birth " + oppositeArrows, 107, HorizontalAlignment.Left);
+            this.listView1.Columns.Add("Place of Birth " + oppositeArrows, 107, HorizontalAlignment.Left);
             this.listView1.Click += new System.EventHandler(this.listView1_Click);
 
             this.GenerateAndDisplayFewPersons();
@@ -67,10 +67,20 @@ namespace PersonSorter
             }
         }
 
-        private void DisplayMessage(string message, Color color)
+        private void DisplayMessage(string message, string infoType)
         {
-            this.label14.Text = message;
-            this.label14.ForeColor = color;
+            switch (infoType)
+            {
+                case "LOG":
+                    MessageBox.Show(message, infoType, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case "WARNING":
+                    MessageBox.Show(message, infoType, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+                case "ERROR":
+                    MessageBox.Show(message, infoType, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
+            }
         }
 
         private void ClearRegistrationField()
@@ -89,139 +99,12 @@ namespace PersonSorter
         {
 
         }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.flagButton2 *= -1;
-            this.button2.BackgroundImage = this.flagButton2 == -1 ? Properties.Resources.down_smaller : Properties.Resources.up_smaller;
-
-            if (this.flagButton2 == 1)
-            {
-                this.SortReverseAlphabetically("Name");
-                this.DisplayPersons();
-            }
-            else
-            {
-                this.SortAlphabetically("Name");
-                this.DisplayPersons();
-            }
-        }
 
         private void listView1_Click(object sender, EventArgs e)
         {
-            var firstSelectedItem = listView1.SelectedItems[0];
-            this.DisplayMessage(firstSelectedItem.Name, Color.Blue);
         }
 
-        private void SortReverseAlphabetically(string criteria)
-        {
-            this.SortAlphabetically(criteria);
-            this.personList.Reverse();
-        }
-
-        private void SortAlphabetically(string criteria)
-        {
-            switch (criteria)
-            {
-                case "Name":
-                    this.personList = this.personList.OrderBy(person => person.Name).ToList();
-                    break;
-                case "LastName":
-                    this.personList = this.personList.OrderBy(person => person.LastName).ToList();
-                    break;
-                case "Gender":
-                    this.personList = this.personList.OrderBy(person => person.Gender).ToList();
-                    break;
-                case "CountryOfBirth":
-                    this.personList = this.personList.OrderBy(person => person.CountryOfBirth).ToList();
-                    break;
-                case "PlaceOfBirth":
-                    this.personList = this.personList.OrderBy(person => person.PlaceOfBirth).ToList();
-                    break;
-                default:
-                    this.personList = this.personList.OrderBy(person => person.Name).ToList();
-                    break;
-            }
-        }
-
-        private void SortReverseChronologically()
-        {
-            this.SortChronologically();
-            this.personList.Reverse();
-        }
-
-        private void SortChronologically()
-        {
-            this.personList = this.personList.OrderBy(person => person.Birthdate).ToList();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.flagButton3 *= -1;
-            this.button3.BackgroundImage = this.flagButton3 == -1 ? Properties.Resources.down_smaller : Properties.Resources.up_smaller;
-
-            if (this.flagButton3 == 1)
-            {
-                this.SortReverseAlphabetically("LastName");
-                this.DisplayPersons();
-            }
-            else
-            {
-                this.SortAlphabetically("LastName");
-                this.DisplayPersons();
-            }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            this.flagButton4 *= -1;
-            this.button4.BackgroundImage = this.flagButton4 == -1 ? Properties.Resources.down_smaller : Properties.Resources.up_smaller;
-
-            if (this.flagButton4 == 1)
-            {
-                this.SortReverseAlphabetically("Gender");
-                this.DisplayPersons();
-            }
-            else
-            {
-                this.SortAlphabetically("Gender");
-                this.DisplayPersons();
-            }
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            this.flagButton5 *= -1;
-            this.button5.BackgroundImage = this.flagButton5 == -1 ? Properties.Resources.down_smaller : Properties.Resources.up_smaller;
-
-            if (this.flagButton5 == 1)
-            {
-                this.SortReverseChronologically();
-                this.DisplayPersons();
-            }
-            else
-            {
-                this.SortChronologically();
-                this.DisplayPersons();
-            }
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            this.flagButton6 *= -1;
-            this.button6.BackgroundImage = this.flagButton6 == -1 ? Properties.Resources.down_smaller : Properties.Resources.up_smaller;
-
-            if (this.flagButton6 == 1)
-            {
-                this.SortReverseAlphabetically("CountryOfBirth");
-                this.DisplayPersons();
-            }
-            else
-            {
-                this.SortAlphabetically("CountryOfBirth");
-                this.DisplayPersons();
-            }
-        }
-
+        /* TODO:02 Try to change images at column header of ListView just like here below.
         private void button7_Click(object sender, EventArgs e)
         {
             this.flagButton7 *= -1;
@@ -238,6 +121,7 @@ namespace PersonSorter
                 this.DisplayPersons();
             }
         }
+        */
         private void button1_Click(object sender, EventArgs e)
         {
             if (this.textBox1.Text != string.Empty && this.textBox2.Text != string.Empty &&
@@ -253,36 +137,48 @@ namespace PersonSorter
                                         char.ToUpper(this.textBox6.Text[0]) + this.textBox6.Text.Substring(1)));
 
                 this.DisplayPersons();
-                this.DisplayMessage("LOG: Person has been registered.", Color.Green);
+                this.DisplayMessage("Person has been registered.", "LOG");
                 this.ClearRegistrationField();
             }
             else
             {
-                this.DisplayMessage("WARNING: You have to fill out all registration fields.", Color.Chocolate);
+                this.DisplayMessage("You have to fill out all registration fields.", "WARNING");
             }
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
+            var allSequenceNumbersToRemove = new List<int>();
             foreach (ListViewItem item in this.listView1.SelectedItems)
             {
-                // TODO:02 Resolve Remove button.
-                var number = item.SubItems[0].Text;
-                var name = item.SubItems[1].Text;
-                var lastname = item.SubItems[2].Text;
-                var gender = item.SubItems[3].Text;
-                var date = item.SubItems[4].Text;
-                var country = item.SubItems[5].Text;
-                var place = item.SubItems[6].Text;
+                allSequenceNumbersToRemove.Add(Convert.ToInt32(item.SubItems[0].Text.Split('.')[0]));
                 this.listView1.Items.Remove(item);
             }
+
+            var personsToBeRemoved = new List<Person>();
+            foreach (var person in this.personList)
+            {
+                foreach (var sequenceNumber in allSequenceNumbersToRemove)
+                {
+                    if (person.SequenceNumber == sequenceNumber)
+                    {
+                        personsToBeRemoved.Add(person);
+                    }
+                }
+            }
+
+            foreach (var removablePerson in personsToBeRemoved)
+            {
+                this.personList.Remove(removablePerson);
+            }
+            this.DisplayPersons();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
             if (this.listView1.SelectedItems.Count != 1)
             {
-                this.DisplayMessage("ERROR: Select exactly one person to edit their data.", Color.Red);
+                this.DisplayMessage("Select exactly one person to edit their data.", "ERROR");
             }
             else
             {
@@ -307,7 +203,90 @@ namespace PersonSorter
                     personData.PlaceOfBirth = this.listView1.SelectedItems[0].SubItems[6].Text;
                 }
 
-                this.DisplayMessage("LOG: Person's has been updated.", Color.Green);
+                this.DisplayMessage("Person's data has been updated.", "LOG");
+            }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            switch (e.Column)
+            {
+                case 1:
+                    this.personList = this.personList.OrderBy(person => person.Name).ToList();
+                    this.listView1.Columns[e.Column].Text = this.listView1.Columns[e.Column].Text.Remove(11) + char.ConvertFromUtf32(8595);
+                    if (this.flagButton2 % 2 == 0)
+                    {
+                        this.listView1.Columns[e.Column].Text = this.listView1.Columns[e.Column].Text.Remove(11) + char.ConvertFromUtf32(8593);
+                        this.personList.Reverse();
+                    }
+                    this.flagButton2++;
+                    this.DisplayPersons();
+                    break;
+                case 2:
+                    this.personList = this.personList.OrderBy(person => person.LastName).ToList();
+                    this.listView1.Columns[e.Column].Text = this.listView1.Columns[e.Column].Text.Remove(10) + char.ConvertFromUtf32(8595);
+                    if (this.flagButton3 % 2 == 0)
+                    {
+                        this.listView1.Columns[e.Column].Text = this.listView1.Columns[e.Column].Text.Remove(10) + char.ConvertFromUtf32(8593);
+                        this.personList.Reverse();
+                    }
+
+                    this.flagButton3++;
+                    this.DisplayPersons();
+                    break;
+                case 3:
+                    this.personList = this.personList.OrderBy(person => person.Gender).ToList();
+                    this.listView1.Columns[e.Column].Text = this.listView1.Columns[e.Column].Text.Remove(7) + char.ConvertFromUtf32(8595);
+                    if (this.flagButton4 % 2 == 0)
+                    {
+                        this.listView1.Columns[e.Column].Text = this.listView1.Columns[e.Column].Text.Remove(7) + char.ConvertFromUtf32(8593);
+                        this.personList.Reverse();
+                    }
+
+                    this.flagButton4++;
+                    this.DisplayPersons();
+                    break;
+                case 4:
+                    this.personList = this.personList.OrderBy(person => person.Birthdate).ToList();
+                    this.listView1.Columns[e.Column].Text = this.listView1.Columns[e.Column].Text.Remove(10) + char.ConvertFromUtf32(8595);
+                    if (this.flagButton5 % 2 == 0)
+                    {
+                        this.listView1.Columns[e.Column].Text = this.listView1.Columns[e.Column].Text.Remove(10) + char.ConvertFromUtf32(8593);
+                        this.personList.Reverse();
+                    }
+
+                    this.flagButton5++;
+                    this.DisplayPersons();
+                    break;
+                case 5:
+                    this.personList = this.personList.OrderBy(person => person.CountryOfBirth).ToList();
+                    this.listView1.Columns[e.Column].Text = this.listView1.Columns[e.Column].Text.Remove(17) + char.ConvertFromUtf32(8595);
+                    if (this.flagButton6 % 2 == 0)
+                    {
+                        this.listView1.Columns[e.Column].Text = this.listView1.Columns[e.Column].Text.Remove(17) + char.ConvertFromUtf32(8593);
+                        this.personList.Reverse();
+                    }
+
+                    this.flagButton6++;
+                    this.DisplayPersons();
+                    break;
+                case 6:
+                    this.personList = this.personList.OrderBy(person => person.PlaceOfBirth).ToList();
+                    this.listView1.Columns[e.Column].Text = this.listView1.Columns[e.Column].Text.Remove(15) + char.ConvertFromUtf32(8595);
+                    if (this.flagButton7 % 2 == 0)
+                    {
+                        this.listView1.Columns[e.Column].Text = this.listView1.Columns[e.Column].Text.Remove(15) + char.ConvertFromUtf32(8593);
+                        this.personList.Reverse();
+                    }
+
+                    this.flagButton7++;
+                    this.DisplayPersons();
+                    break;
             }
         }
     }
