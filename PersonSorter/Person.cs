@@ -24,8 +24,7 @@ namespace PersonSorter
 
         private DateTime BirthdateParser(string birthdate)
         {
-            var arrayOfBirthdateStrings = birthdate.Split('.');
-            return new DateTime(Convert.ToInt32(arrayOfBirthdateStrings[2]), Convert.ToInt32(arrayOfBirthdateStrings[1]), Convert.ToInt32(arrayOfBirthdateStrings[0]));
+            return new DateTime(Convert.ToInt32(birthdate.Split('.')[2]), Convert.ToInt32(birthdate.Split('.')[1]), Convert.ToInt32(birthdate.Split('.')[0]));
         }
     }
 }
