@@ -103,25 +103,6 @@ namespace PersonSorter
         private void listView1_Click(object sender, EventArgs e)
         {
         }
-
-        /* TODO:02 Try to change images at column header of ListView just like here below.
-        private void button7_Click(object sender, EventArgs e)
-        {
-            this.flagButton7 *= -1;
-            this.button7.BackgroundImage = this.flagButton7 == -1 ? Properties.Resources.down_smaller : Properties.Resources.up_smaller;
-
-            if (this.flagButton7 == 1)
-            {
-                this.SortReverseAlphabetically("PlaceOfBirth");
-                this.DisplayPersons();
-            }
-            else
-            {
-                this.SortAlphabetically("PlaceOfBirth");
-                this.DisplayPersons();
-            }
-        }
-        */
         private void button1_Click(object sender, EventArgs e)
         {
             if (this.textBox1.Text != string.Empty && this.textBox2.Text != string.Empty &&
@@ -148,30 +129,38 @@ namespace PersonSorter
 
         private void button8_Click(object sender, EventArgs e)
         {
-            var allSequenceNumbersToRemove = new List<int>();
-            foreach (ListViewItem item in this.listView1.SelectedItems)
+            if (this.listView1.SelectedItems.Count == 0)
             {
-                allSequenceNumbersToRemove.Add(Convert.ToInt32(item.SubItems[0].Text.Split('.')[0]));
-                this.listView1.Items.Remove(item);
+                this.DisplayMessage("Select persons You wish to remove from the list.", "ERROR");
             }
-
-            var personsToBeRemoved = new List<Person>();
-            foreach (var person in this.personList)
+            else
             {
-                foreach (var sequenceNumber in allSequenceNumbersToRemove)
+                var allSequenceNumbersToRemove = new List<int>();
+                foreach (ListViewItem item in this.listView1.SelectedItems)
                 {
-                    if (person.SequenceNumber == sequenceNumber)
+                    allSequenceNumbersToRemove.Add(Convert.ToInt32(item.SubItems[0].Text.Split('.')[0]));
+                    this.listView1.Items.Remove(item);
+                }
+
+                var personsToBeRemoved = new List<Person>();
+                foreach (var person in this.personList)
+                {
+                    foreach (var sequenceNumber in allSequenceNumbersToRemove)
                     {
-                        personsToBeRemoved.Add(person);
+                        if (person.SequenceNumber == sequenceNumber)
+                        {
+                            personsToBeRemoved.Add(person);
+                        }
                     }
                 }
+
+                foreach (var removablePerson in personsToBeRemoved)
+                {
+                    this.personList.Remove(removablePerson);
+                }
+                this.DisplayPersons();
             }
 
-            foreach (var removablePerson in personsToBeRemoved)
-            {
-                this.personList.Remove(removablePerson);
-            }
-            this.DisplayPersons();
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -203,7 +192,7 @@ namespace PersonSorter
                     personData.PlaceOfBirth = this.listView1.SelectedItems[0].SubItems[6].Text;
                 }
 
-                this.DisplayMessage("Person's data has been updated.", "LOG");
+                //this.DisplayMessage("Person's data has been updated.", "LOG");
             }
         }
 

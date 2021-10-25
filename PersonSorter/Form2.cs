@@ -13,8 +13,9 @@ namespace PersonSorter
             InitializeComponent();
             this.textBox1.Text = personData.SubItems[1].Text;
             this.textBox2.Text = personData.SubItems[2].Text;
+
             this.comboBox1.Text = personData.SubItems[3].Text;
-            this.comboBox2.Text = string.Concat(personData.SubItems[4].Text.Split('.')[0], '.'); 
+            this.comboBox2.Text = string.Concat(personData.SubItems[4].Text.Split('.')[0], '.');
             this.comboBox3.Text = string.Concat(personData.SubItems[4].Text.Split('.')[1], '.');
             this.comboBox4.Text = string.Concat(personData.SubItems[4].Text.Split('.')[2], '.');
             this.textBox5.Text = personData.SubItems[5].Text;
@@ -43,5 +44,7 @@ namespace PersonSorter
                 this.PersonData.SubItems[6].Text = this.textBox6.Text;
             }
         }
+
     }
 }
+

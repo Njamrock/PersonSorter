@@ -121,7 +121,34 @@
   <data name="down_smaller" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\down_smaller.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="orange_stickman" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\orange_stickman.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="orange_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\orange_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="orange_nodes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\orange_nodes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="orange_waves_upside_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\orange_waves_upside_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="up_smaller" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\up_smaller.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="orange_waves" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\orange_waves.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="orange_people_connected2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\orange_people_connected2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="orange_circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\orange_circle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="orange_people_connected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\orange_people_connected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="orange_diagonal_stripes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\orange_diagonal_stripes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

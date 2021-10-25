@@ -69,18 +69,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -95,6 +95,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\up_smaller.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orange_waves.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orange_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orange_waves_upside_down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orange_people_connected2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orange_stickman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orange_circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orange_nodes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orange_people_connected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orange_diagonal_stripes.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
