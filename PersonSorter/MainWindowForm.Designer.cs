@@ -1,5 +1,8 @@
 ﻿using System.Windows.Forms;
 
+/// <summary>
+/// PersonSorter is a scope that contains a set of objects related to GUI app for "Person Sorter program."
+/// </summary>
 namespace PersonSorter
 {
     partial class MainWindowForm

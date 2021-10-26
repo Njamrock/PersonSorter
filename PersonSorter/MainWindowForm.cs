@@ -20,7 +20,6 @@ namespace PersonSorter
         {
             this.InitializeComponent();
             this.ListViewSetUp();
-
         }
 
         private void ListViewSetUp()
@@ -153,9 +152,9 @@ namespace PersonSorter
                 {
                     this.personList.Remove(removablePerson);
                 }
+
                 this.DisplayPersons();
             }
-
         }
 
         private void EditButton_Click(object sender, EventArgs e)
@@ -201,6 +200,7 @@ namespace PersonSorter
                         this.registeredUsersListView.Columns[e.Column].Text = this.registeredUsersListView.Columns[e.Column].Text.Remove(11) + char.ConvertFromUtf32(8593);
                         this.personList.Reverse();
                     }
+
                     this.flagFirstName++;
                     this.DisplayPersons();
                     break;
