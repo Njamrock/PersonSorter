@@ -3,22 +3,37 @@ using System.Windows.Forms;
 
 namespace PersonSorter
 {
+    /// <summary>
+    /// Class that contains all methods needed for setting up the pop-up "Edit Window" of the application.
+    /// </summary>
     public partial class EditForm : Form
     {
-        public ListViewItem PersonData { get; set; }
+        public ListViewItem PersonData { get; private set; }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EditForm"/> class.
+        /// </summary>
+        /// <param name="personData"></param>
         public EditForm(ListViewItem personData)
         {
             this.InitializeComponent();
             this.LoadToEditForm(personData);
         }
 
+        /// <summary>
+        /// Saves edited Person() instance into this.personList and closes pop-up "Edit Window".
+        /// </summary>
+        /// <param name="sender">Parameter that contains a reference to the control or object which raised the event.</param>
+        /// <param name="e">Parameter that contains event data.</param>
         private void ConfirmButton_Click(object sender, EventArgs e)
         {
             this.LoadToMainWindowForm();
             this.Close();
         }
 
+        /// <summary>
+        /// Saves edited Person() instance into this.personList.
+        /// </summary>
         private void LoadToMainWindowForm()
         {
             if (this.firstNameTextBox.Text != string.Empty && this.lastNameTextBox.Text != string.Empty &&
@@ -36,6 +51,10 @@ namespace PersonSorter
             }
         }
 
+        /// <summary>
+        /// Loads current data from Person() instance into an "Edit Window".
+        /// </summary>
+        /// <param name="personData">Data obtained from this.personList for selected Person() instance.</param>
         private void LoadToEditForm(ListViewItem personData)
         {
             this.firstNameTextBox.Text = personData.SubItems[1].Text;

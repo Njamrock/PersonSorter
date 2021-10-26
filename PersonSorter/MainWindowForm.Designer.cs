@@ -33,40 +33,40 @@ namespace PersonSorter
         /// </summary>
         private void InitializeComponent()
         {
-            this.registryButton = new Button();
-            this.removeButton = new Button();
-            this.editButton = new Button();
-            this.firstNameLabel = new Label();
-            this.lastNameLabel = new Label();
-            this.genderLabel = new Label();
-            this.birthdateLabel = new Label();
-            this.countryOfBirthLabel = new Label();
-            this.placeOfBirthLabel = new Label();
-            this.logoLabel = new Label();
-            this.mottoLabel = new Label();
-            this.dataPrivacyLabel = new Label();
-            this.quoteLabel = new Label();
-            this.firstNameTextBox = new TextBox();
-            this.lastNameTextBox = new TextBox();
-            this.countryOfBirthTextBox = new TextBox();
-            this.placeOfBirthTextBox = new TextBox();
-            this.genderComboBox = new ComboBox();
-            this.dayComboBox = new ComboBox();
-            this.monthComboBox = new ComboBox();
-            this.yearComboBox = new ComboBox();
-            this.registrationGroupBox = new GroupBox();
-            this.listGroupBox = new GroupBox();
-            this.canteredImagePictureBox = new PictureBox();
-            this.lowerDecorationPictureBox = new PictureBox();
-            this.logoPictureBox = new PictureBox();
-            this.upperDecorationPictureBox = new PictureBox();
-            this.registeredUsersListView = new ListView();
+            this.registryButton = new System.Windows.Forms.Button();
+            this.removeButton = new System.Windows.Forms.Button();
+            this.editButton = new System.Windows.Forms.Button();
+            this.firstNameLabel = new System.Windows.Forms.Label();
+            this.lastNameLabel = new System.Windows.Forms.Label();
+            this.genderLabel = new System.Windows.Forms.Label();
+            this.birthdateLabel = new System.Windows.Forms.Label();
+            this.countryOfBirthLabel = new System.Windows.Forms.Label();
+            this.placeOfBirthLabel = new System.Windows.Forms.Label();
+            this.logoLabel = new System.Windows.Forms.Label();
+            this.mottoLabel = new System.Windows.Forms.Label();
+            this.dataPrivacyLabel = new System.Windows.Forms.Label();
+            this.quoteLabel = new System.Windows.Forms.Label();
+            this.firstNameTextBox = new System.Windows.Forms.TextBox();
+            this.lastNameTextBox = new System.Windows.Forms.TextBox();
+            this.countryOfBirthTextBox = new System.Windows.Forms.TextBox();
+            this.placeOfBirthTextBox = new System.Windows.Forms.TextBox();
+            this.genderComboBox = new System.Windows.Forms.ComboBox();
+            this.dayComboBox = new System.Windows.Forms.ComboBox();
+            this.monthComboBox = new System.Windows.Forms.ComboBox();
+            this.yearComboBox = new System.Windows.Forms.ComboBox();
+            this.registrationGroupBox = new System.Windows.Forms.GroupBox();
+            this.listGroupBox = new System.Windows.Forms.GroupBox();
+            this.registeredUsersListView = new System.Windows.Forms.ListView();
+            this.canteredImagePictureBox = new System.Windows.Forms.PictureBox();
+            this.lowerDecorationPictureBox = new System.Windows.Forms.PictureBox();
+            this.logoPictureBox = new System.Windows.Forms.PictureBox();
+            this.upperDecorationPictureBox = new System.Windows.Forms.PictureBox();
             this.registrationGroupBox.SuspendLayout();
             this.listGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.upperDecorationPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.canteredImagePictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lowerDecorationPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upperDecorationPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // registryButton
@@ -80,20 +80,6 @@ namespace PersonSorter
             this.registryButton.Text = "Register Person";
             this.registryButton.UseVisualStyleBackColor = false;
             this.registryButton.Click += new System.EventHandler(this.RegistryButton_Click);
-            // 
-            // editButton
-            // 
-            this.editButton.BackColor = System.Drawing.Color.Coral;
-            this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.editButton.ForeColor = System.Drawing.Color.SeaShell;
-            this.editButton.Location = new System.Drawing.Point(117, 476);
-            this.editButton.Name = "editButton";
-            this.editButton.Size = new System.Drawing.Size(63, 23);
-            this.editButton.TabIndex = 28;
-            this.editButton.Text = "Edit";
-            this.editButton.UseVisualStyleBackColor = false;
-            this.editButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // removeButton
             // 
@@ -109,41 +95,19 @@ namespace PersonSorter
             this.removeButton.UseVisualStyleBackColor = false;
             this.removeButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
-            // firstNameTextBox
+            // editButton
             // 
-            this.firstNameTextBox.BackColor = System.Drawing.Color.Coral;
-            this.firstNameTextBox.ForeColor = System.Drawing.Color.SeaShell;
-            this.firstNameTextBox.Location = new System.Drawing.Point(130, 50);
-            this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(172, 20);
-            this.firstNameTextBox.TabIndex = 0;
-            // 
-            // lastNameTextBox
-            // 
-            this.lastNameTextBox.BackColor = System.Drawing.Color.Coral;
-            this.lastNameTextBox.ForeColor = System.Drawing.Color.SeaShell;
-            this.lastNameTextBox.Location = new System.Drawing.Point(130, 76);
-            this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(172, 20);
-            this.lastNameTextBox.TabIndex = 1;
-            // 
-            // countryOfBirthTextBox
-            // 
-            this.countryOfBirthTextBox.BackColor = System.Drawing.Color.Coral;
-            this.countryOfBirthTextBox.ForeColor = System.Drawing.Color.SeaShell;
-            this.countryOfBirthTextBox.Location = new System.Drawing.Point(130, 154);
-            this.countryOfBirthTextBox.Name = "countryOfBirthTextBox";
-            this.countryOfBirthTextBox.Size = new System.Drawing.Size(172, 20);
-            this.countryOfBirthTextBox.TabIndex = 4;
-            // 
-            // placeOfBirthTextBox
-            // 
-            this.placeOfBirthTextBox.BackColor = System.Drawing.Color.Coral;
-            this.placeOfBirthTextBox.ForeColor = System.Drawing.Color.SeaShell;
-            this.placeOfBirthTextBox.Location = new System.Drawing.Point(130, 180);
-            this.placeOfBirthTextBox.Name = "placeOfBirthTextBox";
-            this.placeOfBirthTextBox.Size = new System.Drawing.Size(172, 20);
-            this.placeOfBirthTextBox.TabIndex = 7;
+            this.editButton.BackColor = System.Drawing.Color.Coral;
+            this.editButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.editButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.editButton.ForeColor = System.Drawing.Color.SeaShell;
+            this.editButton.Location = new System.Drawing.Point(117, 476);
+            this.editButton.Name = "editButton";
+            this.editButton.Size = new System.Drawing.Size(63, 23);
+            this.editButton.TabIndex = 28;
+            this.editButton.Text = "Edit";
+            this.editButton.UseVisualStyleBackColor = false;
+            this.editButton.Click += new System.EventHandler(this.EditButton_Click);
             // 
             // firstNameLabel
             // 
@@ -199,16 +163,6 @@ namespace PersonSorter
             this.placeOfBirthLabel.TabIndex = 11;
             this.placeOfBirthLabel.Text = "Place of Birth:";
             // 
-            // dataPrivacyLabel
-            // 
-            this.dataPrivacyLabel.ForeColor = System.Drawing.Color.Coral;
-            this.dataPrivacyLabel.Location = new System.Drawing.Point(6, 255);
-            this.dataPrivacyLabel.Name = "dataPrivacyLabel";
-            this.dataPrivacyLabel.Size = new System.Drawing.Size(318, 48);
-            this.dataPrivacyLabel.TabIndex = 18;
-            this.dataPrivacyLabel.Text = "*MeetIng. guarantees discretion during the storage and processing of clients\' per" +
-                                         "sonal data. The data entered is used to connect with more suitable users.";
-            // 
             // logoLabel
             // 
             this.logoLabel.AutoSize = true;
@@ -231,6 +185,16 @@ namespace PersonSorter
             this.mottoLabel.TabIndex = 20;
             this.mottoLabel.Text = "Join. Network. Work.";
             // 
+            // dataPrivacyLabel
+            // 
+            this.dataPrivacyLabel.ForeColor = System.Drawing.Color.Coral;
+            this.dataPrivacyLabel.Location = new System.Drawing.Point(6, 255);
+            this.dataPrivacyLabel.Name = "dataPrivacyLabel";
+            this.dataPrivacyLabel.Size = new System.Drawing.Size(318, 48);
+            this.dataPrivacyLabel.TabIndex = 18;
+            this.dataPrivacyLabel.Text = "*MeetIng. guarantees discretion during the storage and processing of clients\' per" +
+    "sonal data. The data entered is used to connect with more suitable users.";
+            // 
             // quoteLabel
             // 
             this.quoteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -240,9 +204,45 @@ namespace PersonSorter
             this.quoteLabel.Size = new System.Drawing.Size(378, 97);
             this.quoteLabel.TabIndex = 23;
             this.quoteLabel.Text = "\"MeetIng. is no ordinary chatting platform.  Whether You\'re looking for a job, bu" +
-                                   "siness partner or a person to simply exchange ideas, MeetIng. will leave You sat" +
-                                   "isfied.\"\r\nJeff B., an active user";
+    "siness partner or a person to simply exchange ideas, MeetIng. will leave You sat" +
+    "isfied.\"\r\nJeff B., an active user";
             this.quoteLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // firstNameTextBox
+            // 
+            this.firstNameTextBox.BackColor = System.Drawing.Color.Coral;
+            this.firstNameTextBox.ForeColor = System.Drawing.Color.SeaShell;
+            this.firstNameTextBox.Location = new System.Drawing.Point(130, 50);
+            this.firstNameTextBox.Name = "firstNameTextBox";
+            this.firstNameTextBox.Size = new System.Drawing.Size(172, 20);
+            this.firstNameTextBox.TabIndex = 0;
+            // 
+            // lastNameTextBox
+            // 
+            this.lastNameTextBox.BackColor = System.Drawing.Color.Coral;
+            this.lastNameTextBox.ForeColor = System.Drawing.Color.SeaShell;
+            this.lastNameTextBox.Location = new System.Drawing.Point(130, 76);
+            this.lastNameTextBox.Name = "lastNameTextBox";
+            this.lastNameTextBox.Size = new System.Drawing.Size(172, 20);
+            this.lastNameTextBox.TabIndex = 1;
+            // 
+            // countryOfBirthTextBox
+            // 
+            this.countryOfBirthTextBox.BackColor = System.Drawing.Color.Coral;
+            this.countryOfBirthTextBox.ForeColor = System.Drawing.Color.SeaShell;
+            this.countryOfBirthTextBox.Location = new System.Drawing.Point(130, 154);
+            this.countryOfBirthTextBox.Name = "countryOfBirthTextBox";
+            this.countryOfBirthTextBox.Size = new System.Drawing.Size(172, 20);
+            this.countryOfBirthTextBox.TabIndex = 4;
+            // 
+            // placeOfBirthTextBox
+            // 
+            this.placeOfBirthTextBox.BackColor = System.Drawing.Color.Coral;
+            this.placeOfBirthTextBox.ForeColor = System.Drawing.Color.SeaShell;
+            this.placeOfBirthTextBox.Location = new System.Drawing.Point(130, 180);
+            this.placeOfBirthTextBox.Name = "placeOfBirthTextBox";
+            this.placeOfBirthTextBox.Size = new System.Drawing.Size(172, 20);
+            this.placeOfBirthTextBox.TabIndex = 7;
             // 
             // genderComboBox
             // 
@@ -252,9 +252,9 @@ namespace PersonSorter
             this.genderComboBox.ForeColor = System.Drawing.Color.SeaShell;
             this.genderComboBox.FormattingEnabled = true;
             this.genderComboBox.Items.AddRange(new object[] {
-                "Female",
-                "Male",
-                "Other"});
+            "Female",
+            "Male",
+            "Other"});
             this.genderComboBox.Location = new System.Drawing.Point(130, 102);
             this.genderComboBox.Name = "genderComboBox";
             this.genderComboBox.Size = new System.Drawing.Size(172, 21);
@@ -268,37 +268,37 @@ namespace PersonSorter
             this.dayComboBox.ForeColor = System.Drawing.Color.SeaShell;
             this.dayComboBox.FormattingEnabled = true;
             this.dayComboBox.Items.AddRange(new object[] {
-                "1.",
-                "2.",
-                "3.",
-                "4.",
-                "5.",
-                "6.",
-                "7.",
-                "8.",
-                "9.",
-                "10.",
-                "11.",
-                "12.",
-                "13.",
-                "14.",
-                "15.",
-                "16.",
-                "17.",
-                "18.",
-                "19.",
-                "20.",
-                "21.",
-                "22.",
-                "23.",
-                "24.",
-                "25.",
-                "26.",
-                "27.",
-                "28.",
-                "29.",
-                "30.",
-                "31."});
+            "1.",
+            "2.",
+            "3.",
+            "4.",
+            "5.",
+            "6.",
+            "7.",
+            "8.",
+            "9.",
+            "10.",
+            "11.",
+            "12.",
+            "13.",
+            "14.",
+            "15.",
+            "16.",
+            "17.",
+            "18.",
+            "19.",
+            "20.",
+            "21.",
+            "22.",
+            "23.",
+            "24.",
+            "25.",
+            "26.",
+            "27.",
+            "28.",
+            "29.",
+            "30.",
+            "31."});
             this.dayComboBox.Location = new System.Drawing.Point(130, 127);
             this.dayComboBox.Name = "dayComboBox";
             this.dayComboBox.Size = new System.Drawing.Size(48, 21);
@@ -465,63 +465,6 @@ namespace PersonSorter
             this.yearComboBox.Size = new System.Drawing.Size(60, 21);
             this.yearComboBox.TabIndex = 17;
             // 
-            // upperDecorationPictureBox
-            // 
-            this.upperDecorationPictureBox.Image = global::PersonSorter.Properties.Resources.orange_waves_upside_down;
-            this.upperDecorationPictureBox.Location = new System.Drawing.Point(-1, -1);
-            this.upperDecorationPictureBox.Name = "upperDecorationPictureBox";
-            this.upperDecorationPictureBox.Size = new System.Drawing.Size(1055, 13);
-            this.upperDecorationPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.upperDecorationPictureBox.TabIndex = 22;
-            this.upperDecorationPictureBox.TabStop = false;
-            // 
-            // canteredImagePictureBox
-            // 
-            this.canteredImagePictureBox.Image = global::PersonSorter.Properties.Resources.orange_people_connected;
-            this.canteredImagePictureBox.Location = new System.Drawing.Point(12, 122);
-            this.canteredImagePictureBox.Name = "canteredImagePictureBox";
-            this.canteredImagePictureBox.Size = new System.Drawing.Size(330, 178);
-            this.canteredImagePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.canteredImagePictureBox.TabIndex = 21;
-            this.canteredImagePictureBox.TabStop = false;
-            // 
-            // logoPictureBox
-            // 
-            this.logoPictureBox.Image = global::PersonSorter.Properties.Resources.orange_logo;
-            this.logoPictureBox.Location = new System.Drawing.Point(12, 18);
-            this.logoPictureBox.Name = "logoPictureBox";
-            this.logoPictureBox.Size = new System.Drawing.Size(115, 104);
-            this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.logoPictureBox.TabIndex = 18;
-            this.logoPictureBox.TabStop = false;
-            // 
-            // lowerDecorationPictureBox
-            // 
-            this.lowerDecorationPictureBox.Image = global::PersonSorter.Properties.Resources.orange_waves;
-            this.lowerDecorationPictureBox.Location = new System.Drawing.Point(-2, 587);
-            this.lowerDecorationPictureBox.Name = "lowerDecorationPictureBox";
-            this.lowerDecorationPictureBox.Size = new System.Drawing.Size(1056, 75);
-            this.lowerDecorationPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.lowerDecorationPictureBox.TabIndex = 17;
-            this.lowerDecorationPictureBox.TabStop = false;
-            // 
-            // registeredUsersListView
-            // 
-            this.registeredUsersListView.AllowColumnReorder = true;
-            this.registeredUsersListView.BackColor = System.Drawing.Color.SlateBlue;
-            this.registeredUsersListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.registeredUsersListView.ForeColor = System.Drawing.Color.SeaShell;
-            this.registeredUsersListView.FullRowSelect = true;
-            this.registeredUsersListView.GridLines = true;
-            this.registeredUsersListView.HideSelection = false;
-            this.registeredUsersListView.Location = new System.Drawing.Point(38, 29);
-            this.registeredUsersListView.Name = "registeredUsersListView";
-            this.registeredUsersListView.Size = new System.Drawing.Size(575, 444);
-            this.registeredUsersListView.TabIndex = 14;
-            this.registeredUsersListView.UseCompatibleStateImageBehavior = false;
-            this.registeredUsersListView.View = System.Windows.Forms.View.Details;
-            this.registeredUsersListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.RegisteredUsersListView_ColumnClick);
-            // 
             // registrationGroupBox
             // 
             this.registrationGroupBox.Controls.Add(this.dataPrivacyLabel);
@@ -563,6 +506,63 @@ namespace PersonSorter
             this.listGroupBox.TabStop = false;
             this.listGroupBox.Text = "List of Registered Users:";
             // 
+            // registeredUsersListView
+            // 
+            this.registeredUsersListView.AllowColumnReorder = true;
+            this.registeredUsersListView.BackColor = System.Drawing.Color.SlateBlue;
+            this.registeredUsersListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.registeredUsersListView.ForeColor = System.Drawing.Color.SeaShell;
+            this.registeredUsersListView.FullRowSelect = true;
+            this.registeredUsersListView.GridLines = true;
+            this.registeredUsersListView.HideSelection = false;
+            this.registeredUsersListView.Location = new System.Drawing.Point(38, 29);
+            this.registeredUsersListView.Name = "registeredUsersListView";
+            this.registeredUsersListView.Size = new System.Drawing.Size(575, 444);
+            this.registeredUsersListView.TabIndex = 14;
+            this.registeredUsersListView.UseCompatibleStateImageBehavior = false;
+            this.registeredUsersListView.View = System.Windows.Forms.View.Details;
+            this.registeredUsersListView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.RegisteredUsersListView_ColumnClick);
+            // 
+            // canteredImagePictureBox
+            // 
+            this.canteredImagePictureBox.Image = global::PersonSorter.Properties.Resources.orange_people_connected;
+            this.canteredImagePictureBox.Location = new System.Drawing.Point(12, 122);
+            this.canteredImagePictureBox.Name = "canteredImagePictureBox";
+            this.canteredImagePictureBox.Size = new System.Drawing.Size(330, 178);
+            this.canteredImagePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.canteredImagePictureBox.TabIndex = 21;
+            this.canteredImagePictureBox.TabStop = false;
+            // 
+            // lowerDecorationPictureBox
+            // 
+            this.lowerDecorationPictureBox.Image = global::PersonSorter.Properties.Resources.orange_waves;
+            this.lowerDecorationPictureBox.Location = new System.Drawing.Point(-2, 587);
+            this.lowerDecorationPictureBox.Name = "lowerDecorationPictureBox";
+            this.lowerDecorationPictureBox.Size = new System.Drawing.Size(1056, 75);
+            this.lowerDecorationPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.lowerDecorationPictureBox.TabIndex = 17;
+            this.lowerDecorationPictureBox.TabStop = false;
+            // 
+            // logoPictureBox
+            // 
+            this.logoPictureBox.Image = global::PersonSorter.Properties.Resources.orange_logo;
+            this.logoPictureBox.Location = new System.Drawing.Point(12, 18);
+            this.logoPictureBox.Name = "logoPictureBox";
+            this.logoPictureBox.Size = new System.Drawing.Size(115, 104);
+            this.logoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logoPictureBox.TabIndex = 18;
+            this.logoPictureBox.TabStop = false;
+            // 
+            // upperDecorationPictureBox
+            // 
+            this.upperDecorationPictureBox.Image = global::PersonSorter.Properties.Resources.orange_waves_upside_down;
+            this.upperDecorationPictureBox.Location = new System.Drawing.Point(-1, -1);
+            this.upperDecorationPictureBox.Name = "upperDecorationPictureBox";
+            this.upperDecorationPictureBox.Size = new System.Drawing.Size(1055, 13);
+            this.upperDecorationPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.upperDecorationPictureBox.TabIndex = 22;
+            this.upperDecorationPictureBox.TabStop = false;
+            // 
             // MainWindowForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -585,12 +585,13 @@ namespace PersonSorter
             this.registrationGroupBox.ResumeLayout(false);
             this.registrationGroupBox.PerformLayout();
             this.listGroupBox.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.upperDecorationPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.canteredImagePictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lowerDecorationPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.upperDecorationPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

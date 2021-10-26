@@ -5,6 +5,9 @@ using System.Windows.Forms;
 
 namespace PersonSorter
 {
+    /// <summary>
+    /// Class that contains all methods needed for setting up the main window of the application.
+    /// </summary>
     public partial class MainWindowForm : Form
     {
         private List<Person> personList = new List<Person>();
@@ -16,12 +19,18 @@ namespace PersonSorter
         private int flagCountryOfBirth = 1;
         private int flagPlaceOfBirth = 1;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MainWindowForm"/> class.
+        /// </summary>
         public MainWindowForm()
         {
             this.InitializeComponent();
             this.ListViewSetUp();
         }
 
+        /// <summary>
+        /// Sets up the List View of registered users (including columns).
+        /// </summary>
         private void ListViewSetUp()
         {
             this.registeredUsersListView.View = View.Details;
@@ -37,7 +46,11 @@ namespace PersonSorter
             this.GenerateAndDisplayFewPersons();
         }
 
-        private void GenerateAndDisplayFewPersons() // Method used for generating few starting users (For experiment, only.).
+
+        /// <summary>
+        /// Generates few initial registered users (For experiment, only.).
+        /// </summary>
+        private void GenerateAndDisplayFewPersons()
         {
             var person1 = new Person("Pavle", "Pavičić", "Male", "8.9.1997.", "Croatia", "Zagreb");
             var person2 = new Person("Nikola", "Pavičić", "Male", "21.4.2004.", "Croatia", "Zagreb");
@@ -45,11 +58,14 @@ namespace PersonSorter
             var person4 = new Person("Stanislava", "Sečkar Pavičić", "Female", "13.2.1969.", "Croatia", "Slavonski Brod");
             var person5 = new Person("Dwyane", "Wade", "Male", "17.1.1982.", "USA", "Illinois");
             var person6 = new Person("Dolly", "Parton", "Female", "19.1.1946.", "USA", "Tennessee");
-            this.personList.AddRange(new List<Person> { person1, person2, person3, person4, person5, person6 });
+            this.personList.AddRange(new List<Person> {person1, person2, person3, person4, person5, person6});
 
             this.DisplayPersons();
         }
 
+        /// <summary>
+        /// Displays all Person() instances inside this.personList in the List View.
+        /// </summary>
         private void DisplayPersons()
         {
             this.registeredPersons = 0;
@@ -69,6 +85,12 @@ namespace PersonSorter
             }
         }
 
+
+        /// <summary>
+        /// Displays proper message through pop-up window.
+        /// </summary>
+        /// <param name="message">Represents a feedback information to user.</param>
+        /// <param name="infoType">Represents type of feedback information (LOG, WARNING, ERROR).</param>
         private void DisplayMessage(string message, string infoType)
         {
             switch (infoType)
@@ -85,6 +107,9 @@ namespace PersonSorter
             }
         }
 
+        /// <summary>
+        /// Removes all user entries inside Registration Text Boxes and Combo Boxes.
+        /// </summary>
         private void ClearRegistrationField()
         {
             this.firstNameTextBox.Clear();
@@ -97,6 +122,11 @@ namespace PersonSorter
             this.yearComboBox.SelectedIndex = -1;
         }
 
+        /// <summary>
+        /// Saves new Person() instance into this.personList.
+        /// </summary>
+        /// <param name="sender">Parameter that contains a reference to the control or object which raised the event.</param>
+        /// <param name="e">Parameter that contains event data.</param>
         private void RegistryButton_Click(object sender, EventArgs e)
         {
             if (this.firstNameTextBox.Text != string.Empty && this.lastNameTextBox.Text != string.Empty &&
@@ -121,6 +151,11 @@ namespace PersonSorter
             }
         }
 
+        /// <summary>
+        /// Removes Person() instances from this.personList.
+        /// </summary>
+        /// <param name="sender">Parameter that contains a reference to the control or object which raised the event.</param>
+        /// <param name="e">Parameter that contains event data.</param>
         private void RemoveButton_Click(object sender, EventArgs e)
         {
             if (this.registeredUsersListView.SelectedItems.Count == 0)
@@ -157,6 +192,11 @@ namespace PersonSorter
             }
         }
 
+        /// <summary>
+        /// Edits a single Person() instance from this.personList.
+        /// </summary>
+        /// <param name="sender">Parameter that contains a reference to the control or object which raised the event.</param>
+        /// <param name="e">Parameter that contains event data.</param>
         private void EditButton_Click(object sender, EventArgs e)
         {
             if (this.registeredUsersListView.SelectedItems.Count != 1)
@@ -167,8 +207,6 @@ namespace PersonSorter
             {
                 EditForm f2 = new EditForm(this.registeredUsersListView.SelectedItems[0]);
                 f2.ShowDialog();
-                var a = this.registeredUsersListView.SelectedItems[0].SubItems[0].Text;
-                var b = f2.PersonData.SubItems[0].Text;
                 this.registeredUsersListView.SelectedItems[0].SubItems[1].Text = f2.PersonData.SubItems[1].Text;
                 this.registeredUsersListView.SelectedItems[0].SubItems[2].Text = f2.PersonData.SubItems[2].Text;
                 this.registeredUsersListView.SelectedItems[0].SubItems[3].Text = f2.PersonData.SubItems[3].Text;
@@ -188,6 +226,11 @@ namespace PersonSorter
             }
         }
 
+        /// <summary>
+        /// Sorts this.personList in List View regarding the clicked column.
+        /// </summary>
+        /// <param name="sender">Parameter that contains a reference to the control or object which raised the event.</param>
+        /// <param name="e">Parameter that contains event data.</param>
         private void RegisteredUsersListView_ColumnClick(object sender, ColumnClickEventArgs e)
         {
             switch (e.Column)
