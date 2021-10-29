@@ -307,6 +307,8 @@ namespace PersonSorter
                     this.flagPlaceOfBirth++;
                     this.DisplayPersons();
                     break;
+                default:
+                    throw new ArgumentOutOfRangeException("Could not identify column.");
             }
         }
     }
