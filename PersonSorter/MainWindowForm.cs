@@ -205,7 +205,7 @@ namespace PersonSorter
             }
             else
             {
-                EditForm f2 = new EditForm(this.registeredUsersListView.SelectedItems[0]);
+                var f2 = new EditForm(this.registeredUsersListView.SelectedItems[0]);
                 f2.ShowDialog();
                 this.registeredUsersListView.SelectedItems[0].SubItems[1].Text = f2.PersonData.SubItems[1].Text;
                 this.registeredUsersListView.SelectedItems[0].SubItems[2].Text = f2.PersonData.SubItems[2].Text;

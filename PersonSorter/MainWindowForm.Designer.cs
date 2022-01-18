@@ -33,6 +33,7 @@ namespace PersonSorter
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindowForm));
             this.registryButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
@@ -578,10 +579,13 @@ namespace PersonSorter
             this.Controls.Add(this.listGroupBox);
             this.Controls.Add(this.registrationGroupBox);
             this.Controls.Add(this.lowerDecorationPictureBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainWindowForm";
-            this.Text = "MainWindowForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "MeetIng.";
             this.registrationGroupBox.ResumeLayout(false);
             this.registrationGroupBox.PerformLayout();
             this.listGroupBox.ResumeLayout(false);
